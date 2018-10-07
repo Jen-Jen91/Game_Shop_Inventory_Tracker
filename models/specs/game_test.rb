@@ -8,7 +8,7 @@ class TestGame < MiniTest::Test
     @game1 = Game.new({
       "title" => "Fallout 4",
       "description" => "Apocalyptic action RPG",
-      "stock_quantity" => 5,
+      "stock_quantity" => 10,
       "buying_cost" => 30,
       "selling_price" => 45
     })
@@ -23,7 +23,7 @@ class TestGame < MiniTest::Test
   end
 
   def test_game_has_stock_quantity()
-    assert_equal(5, @game1.stock_quantity())
+    assert_equal(10, @game1.stock_quantity())
   end
 
   def test_game_has_buying_cost()

@@ -13,6 +13,5 @@ CREATE TABLE games(
   description TEXT,
   stock_quantity INT8,
   buying_cost NUMERIC,
-  selling_price NUMERIC,
-  publisher_id INT8 REFERENCES publishers(id) ON DELETE CASCADE
+  selling_price NUMERIC
 );
