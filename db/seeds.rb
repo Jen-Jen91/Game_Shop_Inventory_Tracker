@@ -1,8 +1,9 @@
 require("pry")
 require_relative("../models/game.rb")
+require_relative("../models/publisher.rb")
 
 Game.delete_all()
-
+Publisher.delete_all()
 
 game1 = Game.new({
   "title" => "Fallout 4",
@@ -26,13 +27,21 @@ game2.save()
 
 
 
+publisher1 = Publisher.new({
+  "name" => "Bethesda",
+  "contact_name" => "Piper Wright",
+  "contact_email" => "piper.wright@email.com"
+})
 
+publisher1.save()
 
+publisher2 = Publisher.new({
+  "name" => "Sony",
+  "contact_name" => "Crash Bandicoot",
+  "contact_email" => "crash.bandicoot@email.com"
+})
 
-
-
-
-
+publisher2.save()
 
 
 

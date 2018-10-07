@@ -4,7 +4,9 @@ DROP TABLE IF EXISTS publishers;
 
 CREATE TABLE publishers(
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  contact_name VARCHAR(255),
+  contact_email VARCHAR(255)
 );
 
 CREATE TABLE games(
