@@ -2,7 +2,8 @@ require_relative("../db/sql_runner.rb")
 
 class Game
 
-
+  attr_reader :id
+  attr_accessor :title, :description, :stock_quantity, :buying_cost, :selling_price, :publisher_id
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
