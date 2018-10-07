@@ -67,4 +67,16 @@ class Publisher
   end
 
 
+  def games()
+    sql = "SELECT * FROM games
+      WHERE games.publisher_id = $1;"
+    result = SqlRunner.run(sql, [@id])
+    return result.map {|game| Game.new(game)}
+  end
+
+
+  def games_count()
+    return games.count()
+  end
+
 end
