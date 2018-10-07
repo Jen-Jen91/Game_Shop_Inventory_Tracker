@@ -5,7 +5,7 @@ require_relative("../db/sql_runner.rb")
 class Game
 
   attr_reader :id
-  attr_accessor :title, :description, :stock_quantity, :buying_cost, :selling_price
+  attr_accessor :title, :description, :stock_quantity, :buying_cost, :selling_price, :publisher_id
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
@@ -14,6 +14,7 @@ class Game
     @stock_quantity = options["stock_quantity"].to_i()
     @buying_cost = options["buying_cost"].to_i()
     @selling_price = options["selling_price"].to_i()
+    @publisher_id = options["publisher_id"].to_i()
   end
 
 
@@ -23,11 +24,12 @@ class Game
       description,
       stock_quantity,
       buying_cost,
-      selling_price
-      ) VALUES ($1, $2, $3, $4, $5)
+      selling_price,
+      publisher_id
+      ) VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING id;
     "
-    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price]
+    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price, @publisher_id]
     results = SqlRunner.run(sql, values)
     @id = results[0]["id"].to_i()
   end
@@ -65,11 +67,20 @@ class Game
       description = $2,
       stock_quantity = $3,
       buying_cost = $4,
-      selling_price = $5
-      WHERE id = $6;
+      selling_price = $5,
+      publisher_id = $6
+      WHERE id = $7;
     "
-    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price, @id]
+    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price, @publisher_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+
+  def publisher()
+    sql = "SELECT * FROM publishers
+      WHERE publishers.id = $1;"
+    result = SqlRunner.run(sql, [@id])
+    return result.map {|publisher| Publisher.new(publisher)}
   end
 
 
