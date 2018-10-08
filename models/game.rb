@@ -48,7 +48,7 @@ class Game
 
 
   def self.all()
-    sql = "SELECT * FROM games;"
+    sql = "SELECT * FROM games ORDER BY title ASC;"
     results = SqlRunner.run(sql)
     return results.map {|game| Game.new(game)}
   end
@@ -84,5 +84,11 @@ class Game
     # return result.map {|publisher| Publisher.new(publisher)}
   end
 
+  def markup()
+    profit = @selling_price - @buying_cost
+    result = profit.to_f() / @buying_cost
+    markup = result * 100
+    return markup.to_i()
+  end
 
 end
