@@ -1,0 +1,26 @@
+nav ul {
+  list-style-type: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 15px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  background-color: grey;
+  border: none;
+  border-radius: 25px;
+  padding: 3px 10px;
+}
+
+body {
+  font-family: 'K2D', sans-serif;
+}
+
+.home {
+  text-align: center;
+}

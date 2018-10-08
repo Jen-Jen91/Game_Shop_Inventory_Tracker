@@ -4,28 +4,29 @@
   <head>
     <meta charset="utf-8">
     <title>Game Shop</title>
+
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/button.css">
+    <link rel="stylesheet" type="text/css" href="/form.css">
   </head>
 
   <body>
 
     <nav>
       <ul>
-        <li> <a href="/">Home</a> </li>
-        <li> <a href="/games">View All Games</a> </li>
-        <li> <a href="/games/new">Add New Game</a> </li>
-        <li> <a href="/publishers">View All Publishers</a> </li>
-        <li> <a href="/publishers/new">Add New Publisher</a> </li>
+        <li class="nav-item"> <a href="/">Home</a> </li>
+        <li class="nav-item"> <a href="/games">View All Games</a> </li>
+        <li class="nav-item"> <a href="/games/new">Add New Game</a> </li>
+        <li class="nav-item"> <a href="/publishers">View All Publishers</a> </li>
+        <li class="nav-item"> <a href="/publishers/new">Add New Publisher</a> </li>
       </ul>
     </nav>
 
-
-
-
-
-
-    <%= yield %>
-
-
+    <main>
+      <%= yield %>
+    </main>
 
   </body>
 </html>

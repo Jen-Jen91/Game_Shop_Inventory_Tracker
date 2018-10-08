@@ -1,13 +1,15 @@
 <h1>All Publishers</h1>
 
-<hr>
-<% for publisher in @publishers %>
+<section class="index">
+  <hr>
+  <% for publisher in @publishers %>
 
-<p>Name: <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></p>
-<br>
-<p>Contact Details</p>
-<p>Name: <%= publisher.contact_name %></p>
-<p>Email: <%= publisher.contact_email %></p>
-<hr>
+  <p>Name: <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></p>
+  <br>
+  <p>Contact Details</p>
+  <p>Name: <%= publisher.contact_name %></p>
+  <p>Email: <%= publisher.contact_email %></p>
+  <hr>
 
-<% end %>
+  <% end %>
+</section>

@@ -1,8 +1,15 @@
-<h1><%= @publisher.name %></h1>
+<section class="show">
 
-<p>Contact Details</p>
-<p>Name: <%= @publisher.contact_name %></p>
-<p>Email: <%= @publisher.contact_email %></p>
+  <h1><%= @publisher.name %></h1>
 
-<p><a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a></p>
-<form action="/publishers/<%= @publisher.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+  <p>Contact Details</p>
+  <p>Name: <%= @publisher.contact_name %></p>
+  <p>Email: <%= @publisher.contact_email %></p>
+
+  <button type="button">
+    <a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a>
+  </button>
+
+  <form action="/publishers/<%= @publisher.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
+
+</section>

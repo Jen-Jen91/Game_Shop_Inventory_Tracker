@@ -1,12 +1,20 @@
-<h1><%= @game.title %></h1>
+<section class="show">
 
-<p><%= @game.description %></p>
-<br>
-<p>Stock: <%= @game.stock_quantity %></p>
-<p>Cost: <%= @game.buying_cost %></p>
-<p>Selling Price: <%= @game.selling_price %></p>
+  <h1><%= @game.title %></h1>
 
-<p>Publisher: <%= @game.publisher_id %></p>
+  <p><%= @game.description %></p>
+  <br>
+  <p>Stock: <%= @game.stock_quantity %></p>
+  <p>Cost: <%= @game.buying_cost %></p>
+  <p>Selling Price: <%= @game.selling_price %></p>
 
-<p><a href="/games/<%= @game.id %>/edit">Edit Game</a></p>
-<form action="/games/<%= @game.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+  <p>Publisher: <%= @game.publisher_id %></p>
+
+
+  <button type="button">
+    <a href="/games/<%= @game.id %>/edit">Edit Game</a>
+  </button>
+
+  <form action="/games/<%= @game.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
+
+</section>

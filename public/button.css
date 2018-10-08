@@ -1,0 +1,16 @@
+.button, button {
+  font-family: 'K2D', sans-serif;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  color: red;
+  background-color: black;
+  cursor: pointer;
+  width: 150px;
+  margin: 5px 10px;
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
+}

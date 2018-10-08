@@ -1,14 +1,18 @@
 <h1>All Video Games</h1>
 
-<hr>
-<% for game in @games %>
+<section class="index">
 
-<p>Title: <a href="/games/<%= game.id %>"><%= game.title %></a></p>
-<p>Description: <%= game.description %></p>
-<p>Stock: <%= game.stock_quantity %></p>
-<p>Cost: <%= game.buying_cost %></p>
-<p>Selling Price: <%= game.selling_price %></p>
-<p>Publisher: <%= game.publisher_id %></p>
-<hr>
+  <hr>
+  <% for game in @games %>
 
-<% end %>
+  <p>Title: <a href="/games/<%= game.id %>"><%= game.title %></a></p>
+  <p>Description: <%= game.description %></p>
+  <p>Stock: <%= game.stock_quantity %></p>
+  <p>Cost: £<%= game.buying_cost %></p>
+  <p>Selling Price: £<%= game.selling_price %></p>
+  <p>Publisher: <%= game.publisher_id %></p>
+  <hr>
+
+  <% end %>
+
+</section>
