@@ -1,0 +1,14 @@
+<h1>All Video Games</h1>
+
+<hr>
+<% for game in @games %>
+
+<p>Title: <%= game.title %></p>
+<p>Description: <%= game.description %></p>
+<p>Stock: <%= game.stock_quantity %></p>
+<p>Cost: <%= game.buying_cost %></p>
+<p>Selling Price: <%= game.selling_price %></p>
+<p>Publisher: <%= game.publisher_id %></p>
+<hr>
+
+<% end %>

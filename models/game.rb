@@ -77,10 +77,11 @@ class Game
 
 
   def publisher()
-    sql = "SELECT * FROM publishers
-      WHERE publishers.id = $1;"
-    result = SqlRunner.run(sql, [@id])
-    return result.map {|publisher| Publisher.new(publisher)}
+    return Publisher.find(@publisher_id)
+    # sql = "SELECT * FROM publishers
+    #   WHERE publishers.id = $1;"
+    # result = SqlRunner.run(sql, [@id])
+    # return result.map {|publisher| Publisher.new(publisher)}
   end
 
 
