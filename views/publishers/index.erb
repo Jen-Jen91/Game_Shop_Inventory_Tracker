@@ -4,16 +4,20 @@
   <a href="/publishers/new">Add New Publisher</a>
 </button>
 
-<section class="index">
-  <hr>
+<br><br>
+
+<table>
+  <tr>
+    <th>Publisher Name</th>
+    <th>Contact Name</th>
+    <th>Contact Email</th>
+  </tr>
+
   <% for publisher in @publishers %>
-
-  <p>Name: <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></p>
-  <br>
-  <p>Contact Details</p>
-  <p>Name: <%= publisher.contact_name %></p>
-  <p>Email: <%= publisher.contact_email %></p>
-  <hr>
-
+    <tr>
+      <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
+      <td><%= publisher.contact_name %></td>
+      <td><%= publisher.contact_email %></td>
+    </tr>
   <% end %>
-</section>
+</table>
