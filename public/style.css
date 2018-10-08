@@ -24,3 +24,11 @@ body {
 .home {
   text-align: center;
 }
+
+p.low-stock {
+  background-color: yellow;
+}
+
+p.out-of-stock {
+  background-color: red;
+}
