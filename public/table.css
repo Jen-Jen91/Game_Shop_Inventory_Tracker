@@ -1,0 +1,20 @@
+
+td {
+  padding: 10px 25px 0px 5px;
+  border-bottom: 1px solid black;
+}
+
+th {
+  text-align: center;
+  padding: 10px 25px 10px 5px;
+  border-bottom: 5px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td a {
+  text-decoration: none;
+  background-color: grey;
+}

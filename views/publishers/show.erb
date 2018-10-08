@@ -6,9 +6,11 @@
     <%= game.title %>
   <% end %>
 
+  <hr>
   <p>Contact Details</p>
   <p>Name: <%= @publisher.contact_name %></p>
   <p>Email: <%= @publisher.contact_email %></p>
+  <hr>
 
   <button type="button">
     <a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a>

@@ -4,26 +4,36 @@
   <a href="/games/new">Add New Game</a>
 </button>
 
-<section class="index">
+<br><br>
 
-  <hr>
+<table>
+
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Stock</th>
+    <th>Cost</th>
+    <th>Selling Price</th>
+    <th>Publisher</th>
+  </tr>
+
   <% for game in @games %>
+    <tr>
+      <td><a href="/games/<%= game.id %>"><%= game.title %></a></td>
+      <td><%= game.description %></td>
+      <td>
+        <% if game.stock_quantity == 0 %></p>
+          <p class="out-of-stock"><%= game.stock_quantity %></p>
+        <% elsif game.stock_quantity <= 5%>
+          <p class="low-stock"><%= game.stock_quantity %></p>
+        <% else %>
+          <p><%= game.stock_quantity %></p>
+        <% end %>
+      </td>
+      <td>£<%= game.buying_cost %></td>
+      <td>£<%= game.selling_price %></td>
+      <td><%= game.publisher.name %></td>
+    </tr>
 
-  <p>Title: <a href="/games/<%= game.id %>"><%= game.title %></a></p>
-  <p>Description: <%= game.description %></p>
-  <p>Stock: <% if game.stock_quantity == 0 %></p>
-    <p class="out-of-stock"><%= game.stock_quantity %></p>
-  <% elsif game.stock_quantity <= 5%>
-    <p class="low-stock"><%= game.stock_quantity %></p>
-  <% else %>
-    <p><%= game.stock_quantity %></p>
   <% end %>
-
-  <p>Cost: £<%= game.buying_cost %></p>
-  <p>Selling Price: £<%= game.selling_price %></p>
-  <p>Publisher: <%= game.publisher.name  %></p>
-  <hr>
-
-  <% end %>
-
-</section>
+</table>
