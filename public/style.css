@@ -1,3 +1,4 @@
+/* Nav Bar------------------------------------*/
 nav ul {
   list-style-type: none;
   text-transform: uppercase;
@@ -17,6 +18,7 @@ nav ul {
   padding: 3px 10px;
 }
 
+/* Body and Headings------------------------------------*/
 body {
   font-family: 'K2D', sans-serif;
 }
@@ -25,10 +27,24 @@ body {
   text-align: center;
 }
 
+/* Stock alerts------------------------------------*/
 p.low-stock {
   background-color: yellow;
 }
 
 p.out-of-stock {
   background-color: red;
+}
+
+.home .low-stock {
+  color: orange;
+}
+
+.home .out-of-stock {
+  color: red;
+}
+
+.home a {
+  text-decoration: underline;
+  color: inherit;
 }
