@@ -3,7 +3,7 @@
 <hr>
 <% for publisher in @publishers %>
 
-<p>Name: <%= publisher.name %></a></p>
+<p>Name: <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></p>
 <br>
 <p>Contact Details</p>
 <p>Name: <%= publisher.contact_name %></p>
