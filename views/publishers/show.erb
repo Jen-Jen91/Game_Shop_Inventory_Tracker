@@ -2,6 +2,10 @@
 
   <h1><%= @publisher.name %></h1>
 
+  <% for game in @publisher.games %>
+    <%= game.title %>
+  <% end %>
+
   <p>Contact Details</p>
   <p>Name: <%= @publisher.contact_name %></p>
   <p>Email: <%= @publisher.contact_email %></p>
