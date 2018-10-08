@@ -19,7 +19,7 @@ end
 # CREATE
 post("/games") do
   game = Game.new(params)
-  game.save
+  game.save()
   redirect to("/games")
 end
 
@@ -39,8 +39,13 @@ end
 # UPDATE
 post("/games/:id") do
   game = Game.new(params)
-  game.update
+  game.update()
   redirect to("/games/#{params['id']}")
 end
 
 # DESTROY
+post("/games/:id/delete") do
+  game = Game.find(params[:id].to_i())
+  game.delete()
+  redirect to("/games")
+end

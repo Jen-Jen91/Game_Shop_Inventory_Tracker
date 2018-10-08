@@ -7,3 +7,6 @@
 <p>Selling Price: <%= @game.selling_price %></p>
 
 <p>Publisher: <%= @game.publisher_id %></p>
+
+<p><a href="/games/<%= @game.id %>/edit">Edit Game</a></p>
+<form action="/games/<%= @game.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
