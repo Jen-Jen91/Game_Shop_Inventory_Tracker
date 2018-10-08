@@ -40,7 +40,7 @@ end
 post("/games/:id") do
   game = Game.new(params)
   game.update()
-  redirect to("/games/#{params['id']}")
+  redirect to("/games/#{params[:id]}")
 end
 
 # DESTROY
