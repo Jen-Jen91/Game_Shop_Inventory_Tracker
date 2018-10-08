@@ -1,0 +1,35 @@
+<h1>Edit Game</h1>
+
+<form action="/games/<%= @game.id %>" method="post">
+
+  <label for="title-field">Title:</label>
+  <input type="text" name="title" id="title-field" value="<%= @game.title %>">
+  <br>
+  <br>
+  <label for="description-field">Description:</label>
+  <input type="text" name="description" id="description-field" value="<%= @game.description %>">
+  <br>
+  <br>
+  <label for="stock-field">Stock:</label>
+  <input type="number" name="stock_quantity" id="stock-field" min="1" value="<%= @game.stock_quantity %>">
+  <br>
+  <br>
+  <label for="cost-field">Cost: £</label>
+  <input type="number" name="buying_cost" id="cost-field" min="1" value="<%= @game.buying_cost %>">
+  <br>
+  <br>
+  <label for="price-field">Price: £</label>
+  <input type="number" name="selling_price" id="price-field" min="1" value="<%= @game.selling_price %>">
+  <br>
+  <br>
+  <label for="publisher_select">Select Publisher:</label>
+    <select name="publisher_id" id="publisher_select">
+      <% @publishers.each do |publisher| %>
+        <option value="<%= publisher.id %>" <%= "selected" if @game.publisher_id == publisher.id %>> <%= publisher.name %></option>
+      <% end %>
+    </select>
+  <br>
+  <br>
+  <input type="submit" value="Edit Game">
+
+</form>

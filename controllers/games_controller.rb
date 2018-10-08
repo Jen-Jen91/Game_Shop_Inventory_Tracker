@@ -10,12 +10,6 @@ get("/games") do
   erb(:"games/index")
 end
 
-# SHOW
-# get("/games/:id") do
-#   @game = Game.find(params[:id].to_i())
-#   erb(:"games/show")
-# end
-
 # NEW
 get("/games/new") do
   @publishers = Publisher.all()
@@ -29,8 +23,24 @@ post("/games") do
   redirect to("/games")
 end
 
+# SHOW
+get("/games/:id") do
+  @game = Game.find(params[:id].to_i())
+  erb(:"games/show")
+end
+
 # EDIT
+get("/games/:id/edit") do
+  @game = Game.find(params[:id].to_i())
+  @publishers = Publisher.all()
+  erb(:"games/edit")
+end
 
 # UPDATE
+post("/games/:id") do
+  game = Game.new(params)
+  game.update
+  redirect to("/games/#{params['id']}")
+end
 
 # DESTROY
