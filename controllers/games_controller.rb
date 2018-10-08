@@ -28,3 +28,9 @@ post("/games") do
   game.save
   redirect to("/games")
 end
+
+# EDIT
+
+# UPDATE
+
+# DESTROY
