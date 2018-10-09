@@ -14,6 +14,13 @@
       <td><%= @game.genre %></td>
     </tr>
     <tr>
+      <td>Platform(s):</td>
+      <td><% for platform in @game.platform %>
+        <%= platform.name %>
+      <% end %>
+    </td>
+    </tr>
+    <tr>
       <td>Publisher:</td>
       <td><%= @game.publisher.name %></td>
     </tr>

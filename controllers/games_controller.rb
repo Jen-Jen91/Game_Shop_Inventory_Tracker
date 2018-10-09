@@ -1,7 +1,9 @@
 require("sinatra")
 require("sinatra/contrib/all")
 require_relative("../models/game.rb")
+require_relative("../models/game_platform.rb")
 require_relative("../models/publisher.rb")
+require_relative("../models/platform.rb")
 also_reload("../models/*")
 
 # INDEX
@@ -13,6 +15,7 @@ end
 # NEW
 get("/games/new") do
   @publishers = Publisher.all()
+  @platforms = Platform.all()
   erb(:"games/new")
 end
 

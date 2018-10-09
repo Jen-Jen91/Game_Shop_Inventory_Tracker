@@ -3,16 +3,18 @@ form.publisher {
 }
 
 form.game, .edit {
-  width: 330px;
+  width: 350px;
 }
 
 select {
- width: 200px;
+ width: 204px;
  font-size: 0.9em;
  font-family: 'K2D', sans-serif;
  border: 1px solid black;
  display: inline-block;
+ float: right;
 }
+
 
 input {
   width: 200px;
@@ -27,6 +29,6 @@ input {
 textarea {
   border-radius: 5px;
   float: right;
+  width: 345px;
   margin-bottom: 15px;
-  width: 325px;
 }
