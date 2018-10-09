@@ -36,8 +36,8 @@ publisher2.save()
 
 publisher3 = Publisher.new({
   "name" => "Nintendo",
-  "contact_name" => "Preston Garvey",
-  "contact_email" => "preston.garvey@email.com"
+  "contact_name" => "Ash Ketchum",
+  "contact_email" => "ash.ketchum@email.com"
 })
 
 publisher3.save()
