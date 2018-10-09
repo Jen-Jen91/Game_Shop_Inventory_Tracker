@@ -1,6 +1,11 @@
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS publishers;
+DROP TABLE IF EXISTS platforms;
 
+CREATE TABLE platforms(
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 CREATE TABLE publishers(
   id SERIAL8 PRIMARY KEY,

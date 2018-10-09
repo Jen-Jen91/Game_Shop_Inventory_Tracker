@@ -1,10 +1,20 @@
 require("pry")
 require_relative("../models/game.rb")
 require_relative("../models/publisher.rb")
+require_relative("../models/platform.rb")
 
 Game.delete_all()
 Publisher.delete_all()
+Platform.delete_all()
 
+xbox360 = Platform.new({"name" => "Xbox360"})
+xbox360.save()
+ps4 = Platform.new({"name" => "PS4"})
+ps4.save()
+switch = Platform.new({"name" => "Nintendo Switch"})
+switch.save()
+pc = Platform.new({"name" => "PC"})
+pc.save()
 
 publisher1 = Publisher.new({
   "name" => "Sony Interactive Entertainment",
