@@ -34,6 +34,7 @@ publisher3.save()
 game1 = Game.new({
   "title" => "Horizon Zero Dawn",
   "description" => "Centuries after the world has fallen to animalistic machines, a young hunter named Aloy must travel the primitive land to learn the truth about her mysterious past and how this world came to be.",
+  "genre" => "Action RPG",
   "stock_quantity" => 20,
   "buying_cost" => 25,
   "selling_price" => 45,
@@ -45,6 +46,7 @@ game1.save()
 game2 = Game.new({
   "title" => "Fallout 4",
   "description" => "200 years after the nucleur bombs fell, after recently awakening from cryostasis, you must leave Vault 111 to explore a post-apocalyptic Boston and search for your kidnapped son",
+  "genre" => "Action RPG",
   "stock_quantity" => 5,
   "buying_cost" => 20,
   "selling_price" => 30,
@@ -56,6 +58,7 @@ game2.save()
 game3 = Game.new({
   "title" => "The Legend of Zelda: Breath of the Wild",
   "description" => "After awakening from a century-long sleep, Link must once again fight and defeat Ganon before he can destroy the kingdom of Hyrule.",
+  "genre" => "Action Adventure",
   "stock_quantity" => 10,
   "buying_cost" => 30,
   "selling_price" => 45,

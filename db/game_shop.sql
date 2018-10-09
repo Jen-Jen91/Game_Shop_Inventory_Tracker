@@ -13,6 +13,7 @@ CREATE TABLE games(
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255),
   description TEXT,
+  genre VARCHAR(255),
   stock_quantity INT8,
   buying_cost NUMERIC,
   selling_price NUMERIC,

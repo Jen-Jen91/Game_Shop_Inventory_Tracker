@@ -5,12 +5,13 @@ require_relative("../db/sql_runner.rb")
 class Game
 
   attr_reader :id
-  attr_accessor :title, :description, :stock_quantity, :buying_cost, :selling_price, :publisher_id
+  attr_accessor :title, :description, :genre, :stock_quantity, :buying_cost, :selling_price, :publisher_id
 
   def initialize(options)
     @id = options["id"].to_i() if options["id"]
     @title = options["title"]
     @description = options["description"]
+    @genre = options["genre"]
     @stock_quantity = options["stock_quantity"].to_i()
     @buying_cost = options["buying_cost"].to_i()
     @selling_price = options["selling_price"].to_i()
@@ -22,14 +23,15 @@ class Game
     sql = "INSERT INTO games (
       title,
       description,
+      genre,
       stock_quantity,
       buying_cost,
       selling_price,
       publisher_id
-      ) VALUES ($1, $2, $3, $4, $5, $6)
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING id;
     "
-    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price, @publisher_id]
+    values = [@title, @description, @genre, @stock_quantity, @buying_cost, @selling_price, @publisher_id]
     results = SqlRunner.run(sql, values)
     @id = results[0]["id"].to_i()
   end
@@ -65,13 +67,14 @@ class Game
     sql = "UPDATE games SET
       title = $1,
       description = $2,
-      stock_quantity = $3,
-      buying_cost = $4,
-      selling_price = $5,
-      publisher_id = $6
-      WHERE id = $7;
+      genre = $3,
+      stock_quantity = $4,
+      buying_cost = $5,
+      selling_price = $6,
+      publisher_id = $7
+      WHERE id = $8;
     "
-    values = [@title, @description, @stock_quantity, @buying_cost, @selling_price, @publisher_id, @id]
+    values = [@title, @description, @genre, @stock_quantity, @buying_cost, @selling_price, @publisher_id, @id]
     SqlRunner.run(sql, values)
   end
 
