@@ -1,29 +1,33 @@
-<h1>All Publishers</h1>
+<section class="index">
 
-<form action="/publishers" method="get">
-<input type="search" id="publisher-search" name="search" placeholder="Search for a publisher...">
-</form>
+  <h1>All Publishers</h1>
 
-<button type="button">
-  <a href="/publishers/new">Add New Publisher</a>
-</button>
+  <form action="/publishers" method="get">
+    <input type="search" id="publisher-search" name="search" placeholder="Search for a publisher...">
+  </form>
 
-<br><br>
+  <button type="button">
+    <a href="/publishers/new">Add New Publisher</a>
+  </button>
+
+  <br><br>
 
 
 
-<table>
-  <tr>
-    <th>Publisher Name</th>
-    <th>Contact Name</th>
-    <th>Contact Email</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Publisher Name</th>
+      <th>Contact Name</th>
+      <th>Contact Email</th>
+    </tr>
 
-  <% for publisher in @publishers %>
+    <% for publisher in @publishers %>
     <tr>
       <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
       <td><%= publisher.contact_name %></td>
       <td><%= publisher.contact_email %></td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+
+</section>

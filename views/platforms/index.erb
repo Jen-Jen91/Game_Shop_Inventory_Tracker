@@ -1,25 +1,29 @@
-<h1>All Platforms</h1>
+<section class="index">
+  
+  <h1>All Platforms</h1>
 
-<form action="/platforms" method="get">
-<input type="search" id="platform-search" name="search" placeholder="Search for a platform...">
-</form>
+  <form action="/platforms" method="get">
+    <input type="search" id="platform-search" name="search" placeholder="Search for a platform...">
+  </form>
 
-<button type="button">
-  <a href="/platforms/new">Add New Platform</a>
-</button>
+  <button type="button">
+    <a href="/platforms/new">Add New Platform</a>
+  </button>
 
-<br><br>
+  <br><br>
 
 
 
-<table>
-  <tr>
-    <th>Platform</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Platform</th>
+    </tr>
 
-  <% for platform in @platforms %>
+    <% for platform in @platforms %>
     <tr>
       <td><a href="/platforms/<%= platform.id %>"><%= platform.name %></a></td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+
+</section>

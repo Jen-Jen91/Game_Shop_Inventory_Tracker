@@ -1,9 +1,15 @@
-form.publisher {
+form.publisher, .platform {
   width: 325px;
+  background-color: white;
+  padding: 10px 10px 40px 10px;
+  border-radius: 15px;
 }
 
-form.game, .edit {
+form.game, .edit, {
   width: 350px;
+  background-color: white;
+  padding: 10px 10px 40px 10px;
+  border-radius: 15px;
 }
 
 select {
