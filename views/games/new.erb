@@ -1,24 +1,23 @@
 <h1>Add New Game</h1>
 
-<form action="/games" method="post">
+<form action="/games" method="post" class="game">
 
   <label for="title-field">Title:</label>
   <input type="text" name="title" id="title-field">
   <br>
   <br>
-  <label for="description-field">Description:</label>
-  <input type="text" name="description" id="description-field">
+  <textarea name="description" rows="4" cols="50" placeholder="Enter game description here..."></textarea>
   <br>
   <br>
   <label for="stock-field">Stock:</label>
   <input type="number" name="stock_quantity" id="stock-field" min="1">
   <br>
   <br>
-  <label for="cost-field">Cost: £</label>
+  <label for="cost-field">Cost (£): </label>
   <input type="number" name="buying_cost" id="cost-field" min="1">
   <br>
   <br>
-  <label for="price-field">Price: £</label>
+  <label for="price-field">Price (£): </label>
   <input type="number" name="selling_price" id="price-field" min="1">
   <br>
   <br>

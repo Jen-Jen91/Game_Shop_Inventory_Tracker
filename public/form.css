@@ -1,6 +1,13 @@
+form.publisher {
+  width: 325px;
+}
+
+form.game {
+  width: 330px;
+}
+
 select {
- width: 150px;
- margin: 5px 10px;
+ width: 200px;
  font-size: 0.9em;
  font-family: 'K2D', sans-serif;
  border: 1px solid black;
@@ -8,11 +15,18 @@ select {
 }
 
 input {
-  width: 150px;
-  margin: 5px 10px;
+  width: 200px;
   font-size: 0.9em;
   font-family: 'K2D', sans-serif;
   border: 1px solid black;
   border-radius: 5px;
   display: inline-block;
+  float: right;
+}
+
+textarea {
+  border-radius: 5px;
+  float: right;
+  margin-bottom: 15px;
+  width: 325px;
 }
