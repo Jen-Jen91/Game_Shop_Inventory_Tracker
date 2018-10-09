@@ -2,15 +2,25 @@
 
   <h1><%= @publisher.name %></h1>
 
-  <% for game in @publisher.games %>
-    <%= game.title %>
-  <% end %>
+  <table>
+    <tr>
+      <td>Games:</td>
+      <td><% for game in @publisher.games %>
+        <%= game.title %>
+      <% end %>
+    </td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><%= @publisher.contact_name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @publisher.contact_email %></td>
+    </tr>
+  </table>
 
-  <hr>
-  <p>Contact Details</p>
-  <p>Name: <%= @publisher.contact_name %></p>
-  <p>Email: <%= @publisher.contact_email %></p>
-  <hr>
+  <br>
 
   <button type="button">
     <a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a>

@@ -2,16 +2,32 @@
 
   <h1><%= @game.title %></h1>
 
-  <p><%= @game.description %></p>
+  <h3><%= @game.description %></h3>
+
+  <table>
+    <tr>
+      <td>Stock:</td>
+      <td><%= @game.stock_quantity %></td>
+    </tr>
+    <tr>
+      <td>Publisher:</td>
+      <td><%= @game.publisher.name %></td>
+    </tr>
+    <tr>
+      <td>Buy Cost:</td>
+      <td>£<%= @game.buying_cost %></td>
+    </tr>
+    <tr>
+      <td>Sell Price:</td>
+      <td>£<%= @game.selling_price %></td>
+    </tr>
+    <tr>
+      <td>Markup:</td>
+      <td><%= @game.markup %>%</td>
+    </tr>
+  </table>
+
   <br>
-  <p>Stock: <%= @game.stock_quantity %></p>
-  <p>Cost: <%= @game.buying_cost %></p>
-  <p>Selling Price: <%= @game.selling_price %></p>
-  <p>Markup: <%= @game.markup %>%</p>
-
-  <p>Publisher: <%= @game.publisher.name %></p>
-
-
   <button type="button">
     <a href="/games/<%= @game.id %>/edit">Edit Game</a>
   </button>
