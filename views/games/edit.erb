@@ -1,13 +1,12 @@
 <h1>Edit Game</h1>
 
-<form action="/games/<%= @game.id %>" method="post">
+<form action="/games/<%= @game.id %>" method="post" class="edit">
 
   <label for="title-field">Title:</label>
   <input type="text" name="title" id="title-field" value="<%= @game.title %>">
   <br>
   <br>
-  <label for="description-field">Description:</label>
-  <input type="text" name="description" id="description-field" value="<%= @game.description %>">
+  <textarea name="description" rows="4" cols="50"> <%= @game.description %></textarea>
   <br>
   <br>
   <label for="genre-field">Genre:</label>

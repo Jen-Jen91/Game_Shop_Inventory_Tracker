@@ -2,7 +2,7 @@ form.publisher {
   width: 325px;
 }
 
-form.game {
+form.game, .edit {
   width: 330px;
 }
 
