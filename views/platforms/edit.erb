@@ -1,0 +1,11 @@
+<h1>Edit Platform</h1>
+
+<form action="/platforms/<%= @platform.id %>" method="post" class="platform">
+
+  <label for="name-field">Name:</label>
+  <input type="text" name="name" id="name-field" value="<%= @platform.name %>">
+  <br>
+  <br>
+  <input type="submit" value="Edit Platform" class="button">
+
+</form>

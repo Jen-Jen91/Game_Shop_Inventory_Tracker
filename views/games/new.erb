@@ -1,16 +1,19 @@
 <h1>Add New Game</h1>
 
+<p><em>If you cannot see the relevant platform or publisher on the lists below, please add the new platform or publisher first using the links above.</em></p>
+<br>
+
 <form action="/games" method="post" class="game">
 
   <label for="title-field">Title:</label>
-  <input type="text" name="title" id="title-field">
+  <input type="text" name="title" id="title-field" required>
   <br>
   <br>
   <textarea name="description" rows="4" cols="50" placeholder="Enter game description here..."></textarea>
   <br>
   <br><br>
   <label for="genre-field">Genre:</label>
-  <input type="text" name="genre" id="genre-field">
+  <input type="text" name="genre" id="genre-field" required>
   <br>
   <br>
   <label for="platform_select">Select Platforms(s):</label>
@@ -22,15 +25,15 @@
   <br>
   <br>
   <label for="stock-field">Stock:</label>
-  <input type="number" name="stock_quantity" id="stock-field" min="1">
+  <input type="number" name="stock_quantity" id="stock-field" min="1" required>
   <br>
   <br>
   <label for="cost-field">Cost (£): </label>
-  <input type="number" name="buying_cost" id="cost-field" min="1">
+  <input type="number" name="buying_cost" id="cost-field" min="1" required>
   <br>
   <br>
   <label for="price-field">Price (£): </label>
-  <input type="number" name="selling_price" id="price-field" min="1">
+  <input type="number" name="selling_price" id="price-field" min="1" required>
   <br>
   <br>
   <label for="publisher_select">Select Publisher:</label>
