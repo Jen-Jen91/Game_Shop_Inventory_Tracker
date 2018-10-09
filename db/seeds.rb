@@ -1,14 +1,16 @@
 require("pry")
+require_relative("../models/game_platform.rb")
 require_relative("../models/game.rb")
 require_relative("../models/publisher.rb")
 require_relative("../models/platform.rb")
 
+GamePlatform.delete_all()
 Game.delete_all()
 Publisher.delete_all()
 Platform.delete_all()
 
-xbox360 = Platform.new({"name" => "Xbox360"})
-xbox360.save()
+xbox_one = Platform.new({"name" => "Xbox One"})
+xbox_one.save()
 ps4 = Platform.new({"name" => "PS4"})
 ps4.save()
 switch = Platform.new({"name" => "Nintendo Switch"})
@@ -77,6 +79,17 @@ game3 = Game.new({
 
 game3.save()
 
+
+g_p1 = GamePlatform.new({"game_id" => game1.id, "platform_id" => ps4.id})
+g_p2 = GamePlatform.new({"game_id" => game2.id, "platform_id" => ps4.id})
+g_p3 = GamePlatform.new({"game_id" => game2.id, "platform_id" => xbox_one.id})
+g_p4 = GamePlatform.new({"game_id" => game2.id, "platform_id" => pc.id})
+g_p5 = GamePlatform.new({"game_id" => game3.id, "platform_id" => switch.id})
+g_p1.save()
+g_p2.save()
+g_p3.save()
+g_p4.save()
+g_p5.save()
 
 
 binding.pry
