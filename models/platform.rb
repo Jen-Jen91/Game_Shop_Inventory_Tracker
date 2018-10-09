@@ -52,4 +52,13 @@ class Platform
     SqlRunner.run(sql, values)
   end
 
+  def game()
+    sql = "SELECT games.* FROM games
+      INNER JOIN game_platforms
+      ON game_platforms.game_id = games.id
+      WHERE game_platforms.platform_id = $1;"
+    result = SqlRunner.run(sql, [@id])
+    return result.map{|game| Game.new(game)}
+  end
+
 end

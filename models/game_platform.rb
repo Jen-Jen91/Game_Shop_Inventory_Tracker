@@ -16,7 +16,7 @@ class GamePlatform
 
   def save()
     sql = "INSERT INTO game_platforms (game_id, platform_id)
-    VALUES ($1, $2) RETURNING id;"
+      VALUES ($1, $2) RETURNING id;"
     values = [@game_id, @platform_id]
     results = SqlRunner.run(sql, values)
     @id = results[0]["id"].to_i()
@@ -51,9 +51,25 @@ class GamePlatform
 
   def update()
     sql = "UPDATE game_platforms
-    SET game_id = $1, platform_id = $2 WHERE id = $3;"
+      SET game_id = $1, platform_id = $2 WHERE id = $3;"
     values = [@game_id, @platform_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+
+  def game()
+    sql = "SELECT * FROM games
+      WHERE games.id = $1;"
+    result = SqlRunner.run(sql, [@game_id])
+    return result.map{|game| Game.new(game)}
+  end
+
+
+  def platform()
+    sql = "SELECT * FROM platforms
+      WHERE platforms.id = $1;"
+    result = SqlRunner.run(sql, [@platform_id])
+    return result.map{|platform| Platform.new(platform)}
   end
 
 end

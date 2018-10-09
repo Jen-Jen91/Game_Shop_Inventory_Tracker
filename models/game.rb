@@ -94,4 +94,14 @@ class Game
     return markup.to_i()
   end
 
+
+  def platform()
+    sql = "SELECT platforms.* FROM platforms
+      INNER JOIN game_platforms
+      ON game_platforms.platform_id = platforms.id
+      WHERE game_platforms.game_id = $1;"
+    result = SqlRunner.run(sql, [@id])
+    return result.map{|platform| Platform.new(platform)}
+  end
+
 end
