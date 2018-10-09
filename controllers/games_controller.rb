@@ -9,6 +9,8 @@ also_reload("../models/*")
 # INDEX
 get("/games") do
   @games = Game.all()
+  @publishers = Publisher.all()
+  @platforms = Platform.all()
   erb(:"games/index")
 end
 

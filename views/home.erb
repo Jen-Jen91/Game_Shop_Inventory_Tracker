@@ -2,6 +2,8 @@
 
   <h1>Welcome to your game shop!</h1>
 
+  <br>
+
   <% for game in @games %>
     <% if game.stock_quantity == 0 %>
       <h3 class="out-of-stock">You are out of stock for <a href="/games/<%= game.id %>"><%= game.title %>!</a> </h3>

@@ -1,4 +1,8 @@
 /* Nav Bar------------------------------------*/
+nav {
+
+}
+
 nav ul {
   list-style-type: none;
   text-transform: uppercase;
@@ -12,6 +16,7 @@ nav ul {
 
 .nav-item a {
   text-decoration: none;
+  color: white;
   background-color: grey;
   border: none;
   border-radius: 25px;
@@ -27,13 +32,19 @@ body {
   text-align: center;
 }
 
-/* Stock alerts------------------------------------*/
-p.low-stock {
+body.home {
   background-color: yellow;
 }
 
-p.out-of-stock {
+/* Stock alerts------------------------------------*/
+td.low-stock {
+  background-color: yellow;
+  text-align: center;
+}
+
+td.out-of-stock {
   background-color: red;
+  text-align: center;
 }
 
 .home .low-stock {

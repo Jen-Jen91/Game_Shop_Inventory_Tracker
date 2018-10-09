@@ -2,6 +2,7 @@
 td {
   padding: 10px 25px 0px 5px;
   border-bottom: 1px solid black;
+  text-align: center;
 }
 
 th {
@@ -16,5 +17,9 @@ table {
 
 td a {
   text-decoration: none;
-  background-color: grey;
+}
+
+td a:hover {
+  background-color: DarkGrey;
+  padding: 0px 5px;
 }
