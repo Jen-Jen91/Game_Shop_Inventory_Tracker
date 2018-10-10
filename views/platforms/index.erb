@@ -16,12 +16,13 @@
       </tr>
 
       <% for platform in @platforms %>
-      <tr>
-        <td><a href="/platforms/<%= platform.id %>"><%= platform.name %></a></td>
-      </tr>
+        <tr>
+          <td>
+            <a href="/platforms/<%= platform.id %>"><%= platform.name %></a>
+          </td>
+        </tr>
       <% end %>
     </table>
 
   </section>
-
 </section>

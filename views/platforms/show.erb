@@ -7,8 +7,9 @@
     <table>
       <tr>
         <td>Games:</td>
-        <td><% for game in @platform.game %>
-          <p><%= game.title %></p>
+        <td>
+          <% for game in @platform.game %>
+            <%= game.title%>
           <% end %>
         </td>
       </tr>
@@ -24,5 +25,4 @@
     <form action="/platforms/<%= @platform.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 
   </section>
-
 </section>
