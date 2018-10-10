@@ -3,17 +3,20 @@
 <form action="/publishers/<%= @publisher.id %>" method="post" class="publisher">
 
   <label for="name-field">Name:</label>
-  <input type="text" name="name" id="name-field" value="<%= @publisher.name %>">
-  <br>
-  <br>
+  <input type="text" name="name" id="name-field" value=" <%= @publisher.name %>">
+
+  <br><br>
+
   <label for="contact-name-field">Contact Name:</label>
-  <input type="text" name="contact_name" id="contact-name-field" value="<%= @publisher.contact_name %>">
-  <br>
-  <br>
+  <input type="text" name="contact_name" id="contact-name-field" value=" <%= @publisher.contact_name %>">
+
+  <br><br>
+
   <label for="contact-email-field">Contact Email:</label>
-  <input type="text" name="contact_email" id="contact-email-field" value="<%= @publisher.contact_email %>">
-  <br>
-  <br>
-  <input type="submit" value="Edit Publisher" class="button">
+  <input type="text" name="contact_email" id="contact-email-field" value=" <%= @publisher.contact_email %>">
+
+  <br><br>
+
+  <input type="submit" value="Submit Changes" class="button">
 
 </form>

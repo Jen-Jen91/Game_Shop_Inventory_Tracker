@@ -1,13 +1,13 @@
-<div class="home">
+<section class="home">
 
-  <h1>Welcome to your game shop!</h1>
+  <h1>Welcome To Your Game Shop!</h1>
 
   <% for game in @games %>
     <% if game.stock_quantity == 0 %>
-      <h3 class="out-of-stock">You are out of stock for <a href="/games/<%= game.id %>"><%= game.title %>!</a> </h3>
+      <h3 class="out-of-stock">You are out of stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a> </h3>
     <% elsif game.stock_quantity<=5 %>
-      <h3 class="low-stock">You are running low on stock for <a href="/games/<%= game.id %>"><%= game.title %>!</a></h3>
+      <h3 class="low-stock">You are running low on stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a></h3>
     <% end %>
   <% end %>
 
-</div>
+</section>

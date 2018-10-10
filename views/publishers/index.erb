@@ -18,14 +18,15 @@
       </tr>
 
       <% for publisher in @publishers %>
-      <tr>
-        <td><a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a></td>
-        <td><%= publisher.contact_name %></td>
-        <td><%= publisher.contact_email %></td>
-      </tr>
+        <tr>
+          <td>
+            <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a>
+          </td>
+          <td><%= publisher.contact_name %></td>
+          <td><%= publisher.contact_email %></td>
+        </tr>
       <% end %>
     </table>
 
   </section>
-
 </section>
