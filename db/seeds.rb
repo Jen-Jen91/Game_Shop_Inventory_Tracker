@@ -1,13 +1,55 @@
 require("pry")
 require_relative("../models/game_platform.rb")
 require_relative("../models/game.rb")
-require_relative("../models/publisher.rb")
 require_relative("../models/platform.rb")
+require_relative("../models/publisher.rb")
 
 GamePlatform.delete_all()
 Game.delete_all()
-Publisher.delete_all()
 Platform.delete_all()
+Publisher.delete_all()
+
+#------------------------------------------------------------------------------
+# Publishers:
+
+publisher1 = Publisher.new({
+  "name" => "Sony Interactive Entertainment",
+  "contact_name" => "Crash Bandicoot",
+  "contact_email" => "crash.bandicoot@email.com"
+})
+
+publisher2 = Publisher.new({
+  "name" => "Bethesda Softworks",
+  "contact_name" => "Preston Garvey",
+  "contact_email" => "preston.garvey@email.com"
+})
+
+publisher3 = Publisher.new({
+  "name" => "Nintendo",
+  "contact_name" => "Ash Ketchum",
+  "contact_email" => "ash.ketchum@email.com"
+})
+
+publisher4 = Publisher.new({
+  "name" => "Empire Interactive",
+  "contact_name" => "April Ryan",
+  "contact_email" => "april.ryan@email.com"
+})
+
+publisher5 = Publisher.new({
+  "name" => "Electronic Arts",
+  "contact_name" => "Commander Shepard",
+  "contact_email" => "commander.shepard@email.com"
+})
+
+publisher1.save()
+publisher2.save()
+publisher3.save()
+publisher4.save()
+publisher5.save()
+
+#------------------------------------------------------------------------------
+# Platforms:
 
 xbox_one = Platform.new({"name" => "Xbox One"})
 xbox_one.save()
@@ -22,74 +64,32 @@ switch.save()
 pc = Platform.new({"name" => "PC"})
 pc.save()
 
-publisher1 = Publisher.new({
-  "name" => "Sony Interactive Entertainment",
-  "contact_name" => "Crash Bandicoot",
-  "contact_email" => "crash.bandicoot@email.com"
-})
-
-publisher1.save()
-
-publisher2 = Publisher.new({
-  "name" => "Bethesda Softworks",
-  "contact_name" => "Preston Garvey",
-  "contact_email" => "preston.garvey@email.com"
-})
-
-publisher2.save()
-
-publisher3 = Publisher.new({
-  "name" => "Nintendo",
-  "contact_name" => "Ash Ketchum",
-  "contact_email" => "ash.ketchum@email.com"
-})
-
-publisher3.save()
-
-publisher4 = Publisher.new({
-  "name" => "Empire Interactive",
-  "contact_name" => "April Ryan",
-  "contact_email" => "april.ryan@email.com"
-})
-
-publisher4.save()
-
-publisher5 = Publisher.new({
-  "name" => "Electronic Arts",
-  "contact_name" => "Commander Shepard",
-  "contact_email" => "commander.shepard@email.com"
-})
-
-publisher5.save()
-
+#------------------------------------------------------------------------------
+# Games:
 
 game1 = Game.new({
   "title" => "Horizon Zero Dawn",
   "description" => "Centuries after the world has fallen to animalistic machines, a young hunter named Aloy must travel the primitive land to learn the truth about her mysterious past and how this world came to be.",
   "genre" => "Action RPG",
-  "stock_quantity" => 20,
+  "stock_quantity" => 5,
   "buying_cost" => 25,
   "selling_price" => 45,
   "publisher_id" => publisher1.id
 })
 
-game1.save()
-
 game2 = Game.new({
   "title" => "Fallout 4",
-  "description" => "200 years after the nucleur bombs fell, after recently awakening from cryostasis, you must leave Vault 111 to explore a post-apocalyptic Boston and search for your kidnapped son",
+  "description" => "200 years after the nuclear bombs fell, you awake from cryo-sleep and must leave Vault 111 to explore a post-apocalyptic Boston and search for your kidnapped son.",
   "genre" => "Action RPG",
-  "stock_quantity" => 5,
-  "buying_cost" => 20,
-  "selling_price" => 30,
+  "stock_quantity" => 20,
+  "buying_cost" => 25,
+  "selling_price" => 40,
   "publisher_id" => publisher2.id
 })
 
-game2.save()
-
 game3 = Game.new({
   "title" => "The Legend of Zelda: Breath of the Wild",
-  "description" => "After awakening from a century-long sleep, Link must once again fight and defeat Ganon before he can destroy the kingdom of Hyrule.",
+  "description" => "After awakening from a century-long sleep, Link must once again find Zelda and defeat Ganon before he destroys the kingdom of Hyrule.",
   "genre" => "Action Adventure",
   "stock_quantity" => 10,
   "buying_cost" => 30,
@@ -97,19 +97,15 @@ game3 = Game.new({
   "publisher_id" => publisher3.id
 })
 
-game3.save()
-
 game4 = Game.new({
   "title" => "The Longest Journey",
-  "description" => "April Ryan, a young visual-arts student, sets off on a journey to find an explanation for her recent strange dreams, not knowing just how important she is to the fate of both this world, and the world of magic.",
+  "description" => "Concerned about her strange dreams, a young visual-arts student named April Ryan sets off on a journey to find an explanation, not knowing just how important she is to the fate of both this world, and the world of magic.",
   "genre" => "Point-and-Click Adventure",
   "stock_quantity" => 0,
-  "buying_cost" => 5,
+  "buying_cost" => 10,
   "selling_price" => 12,
   "publisher_id" => publisher4.id
 })
-
-game4.save()
 
 game5 = Game.new({
   "title" => "Mass Effect 2",
@@ -121,8 +117,14 @@ game5 = Game.new({
   "publisher_id" => publisher5.id
 })
 
+game1.save()
+game2.save()
+game3.save()
+game4.save()
 game5.save()
 
+#------------------------------------------------------------------------------
+# Game_Platforms (joiner table):
 
 g_p1 = GamePlatform.new({"game_id" => game1.id, "platform_id" => ps4.id})
 g_p2 = GamePlatform.new({"game_id" => game2.id, "platform_id" => ps4.id})
@@ -143,6 +145,6 @@ g_p7.save()
 g_p8.save()
 g_p9.save()
 
-
+#------------------------------------------------------------------------------
 binding.pry
 nil
