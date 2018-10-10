@@ -4,7 +4,7 @@
 
   <table>
     <tr>
-      <td>Games:</td>
+      <td><strong>Games:</strong></td>
       <td>
         <% for game in @publisher.games %>
           <%= game.title %>
@@ -12,11 +12,11 @@
       </td>
     </tr>
     <tr>
-      <td>Name:</td>
+      <td><strong>Name:</strong></td>
       <td><%= @publisher.contact_name %></td>
     </tr>
     <tr>
-      <td>Email:</td>
+      <td><strong>Email:</strong></td>
       <td><%= @publisher.contact_email %></td>
     </tr>
   </table>
