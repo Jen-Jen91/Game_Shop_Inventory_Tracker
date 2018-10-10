@@ -11,8 +11,12 @@ Platform.delete_all()
 
 xbox_one = Platform.new({"name" => "Xbox One"})
 xbox_one.save()
+xbox360 = Platform.new({"name" => "Xbox 360"})
+xbox360.save()
 ps4 = Platform.new({"name" => "PS4"})
 ps4.save()
+ps3 = Platform.new({"name" => "PS3"})
+ps3.save()
 switch = Platform.new({"name" => "Nintendo Switch"})
 switch.save()
 pc = Platform.new({"name" => "PC"})
@@ -41,6 +45,22 @@ publisher3 = Publisher.new({
 })
 
 publisher3.save()
+
+publisher4 = Publisher.new({
+  "name" => "Empire Interactive",
+  "contact_name" => "April Ryan",
+  "contact_email" => "april.ryan@email.com"
+})
+
+publisher4.save()
+
+publisher5 = Publisher.new({
+  "name" => "Electronic Arts",
+  "contact_name" => "Commander Shepard",
+  "contact_email" => "commander.shepard@email.com"
+})
+
+publisher5.save()
 
 
 game1 = Game.new({
@@ -79,17 +99,49 @@ game3 = Game.new({
 
 game3.save()
 
+game4 = Game.new({
+  "title" => "The Longest Journey",
+  "description" => "April Ryan, a young visual-arts student, sets off on a journey to find an explanation for her recent strange dreams, not knowing just how important she is to the fate of both this world, and the world of magic.",
+  "genre" => "Point-and-Click Adventure",
+  "stock_quantity" => 0,
+  "buying_cost" => 5,
+  "selling_price" => 12,
+  "publisher_id" => publisher4.id
+})
+
+game4.save()
+
+game5 = Game.new({
+  "title" => "Mass Effect 2",
+  "description" => "Two years after thwarting the Reaper invasion, Commander Shepard faces a new enemy and must assemble a team to save the galaxy from destruction.",
+  "genre" => "Acton RPG, Third-Person Shooter",
+  "stock_quantity" => 7,
+  "buying_cost" => 20,
+  "selling_price" => 25,
+  "publisher_id" => publisher5.id
+})
+
+game5.save()
+
 
 g_p1 = GamePlatform.new({"game_id" => game1.id, "platform_id" => ps4.id})
 g_p2 = GamePlatform.new({"game_id" => game2.id, "platform_id" => ps4.id})
 g_p3 = GamePlatform.new({"game_id" => game2.id, "platform_id" => xbox_one.id})
 g_p4 = GamePlatform.new({"game_id" => game2.id, "platform_id" => pc.id})
 g_p5 = GamePlatform.new({"game_id" => game3.id, "platform_id" => switch.id})
+g_p6 = GamePlatform.new({"game_id" => game4.id, "platform_id" => pc.id})
+g_p7 = GamePlatform.new({"game_id" => game5.id, "platform_id" => xbox360.id})
+g_p8 = GamePlatform.new({"game_id" => game5.id, "platform_id" => ps3.id})
+g_p9 = GamePlatform.new({"game_id" => game5.id, "platform_id" => pc.id})
 g_p1.save()
 g_p2.save()
 g_p3.save()
 g_p4.save()
 g_p5.save()
+g_p6.save()
+g_p7.save()
+g_p8.save()
+g_p9.save()
 
 
 binding.pry
