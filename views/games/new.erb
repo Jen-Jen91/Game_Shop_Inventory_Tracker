@@ -1,51 +1,59 @@
 <h1>Add New Game</h1>
 
-<p><em>If you cannot see the relevant platform or publisher on the lists below, please add the new platform or publisher first using the links above.</em></p>
+<p><em>Please add a new <a href="/platforms/new">platform</a> or <a href="/publishers/new">publisher</a> if you cannot find them in the options below.</em></p>
 
 
 <form action="/games" method="post" class="game">
 
   <label for="title-field">Title:</label>
   <input type="text" name="title" id="title-field" required>
-  <br>
-  <br>
+
+  <br><br>
+
   <textarea name="description" rows="4" cols="50" placeholder="Enter game description here..."></textarea>
-  <br>
-  <br><br><br>
+
+  <br><br>
+
   <label for="genre-field">Genre:</label>
   <input type="text" name="genre" id="genre-field" required>
-  <br>
-  <br>
+
+  <br><br>
+
   <label for="stock-field">Stock:</label>
   <input type="number" name="stock_quantity" id="stock-field" min="1" required>
-  <br>
-  <br>
+
+  <br><br>
+
   <label for="cost-field">Cost (£): </label>
   <input type="number" name="buying_cost" id="cost-field" min="1" required>
-  <br>
-  <br>
-  <label for="price-field">Price (£): </label>
+
+  <br><br>
+
+  <label for="price-field">Retail Price (£): </label>
   <input type="number" name="selling_price" id="price-field" min="1" required>
-  <br>
-  <br>
+
+  <br><br>
+
   <label for="publisher_select">Select Publisher:</label>
   <select name="publisher_id" id="publisher_select">
     <% @publishers.each do |publisher| %>
-    <option value="<%= publisher.id %>"><%= publisher.name %></option>
+      <option value="<%= publisher.id %>"><%= publisher.name %></option>
     <% end %>
   </select>
-  <br>
-  <br>
+
+  <br><br>
+
   <label for="platform_select">Select Platforms(s):</label><br>
   <div class="checkbox">
 
     <% @platforms.each do |platform| %>
-    <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>" /  ><%= platform.name %><br>
+      <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>"><%= platform.name %><br>
     <% end %>
 
   </div>
+
   <br>
 
-  <input type="submit" value="Add Game" class="button">
+  <input type="submit" value="Add" class="button">
 
 </form>

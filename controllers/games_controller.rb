@@ -51,6 +51,7 @@ end
 get("/games/:id/edit") do
   @game = Game.find(params[:id].to_i())
   @publishers = Publisher.all()
+  @platforms = Platform.all()
   erb(:"games/edit")
 end
 
@@ -58,6 +59,13 @@ end
 post("/games/:id") do
   game = Game.new(params)
   game.update()
+  for platform_id in params["platform_ids"]
+    game_platform = GamePlatform.new({
+      "game_id" => game.id,
+      "platform_id" => platform_id
+    })
+    game_platform.update()
+  end
   redirect to("/games/#{params[:id]}")
 end
 
