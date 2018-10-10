@@ -6,22 +6,22 @@ class TestPublisher < MiniTest::Test
 
   def setup()
     @publisher1 = Publisher.new({
-      "name" => "Bethesda",
-      "contact_name" => "Piper Wright",
-      "contact_email" => "piper.wright@email.com"
+      "name" => "Bethesda Softworks",
+      "contact_name" => "Preston Garvey",
+      "contact_email" => "preston.garvey@email.com"
     })
   end
 
   def test_publisher_has_name()
-    assert_equal("Bethesda", @publisher1.name())
+    assert_equal("Bethesda Softworks", @publisher1.name())
   end
 
   def test_publisher_has_contact_name()
-    assert_equal("Piper Wright", @publisher1.contact_name())
+    assert_equal("Preston Garvey", @publisher1.contact_name())
   end
 
   def test_publisher_has_contact_email()
-    assert_equal("piper.wright@email.com", @publisher1.contact_email())
+    assert_equal("preston.garvey@email.com", @publisher1.contact_email())
   end
 
 end

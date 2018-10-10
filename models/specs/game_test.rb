@@ -9,7 +9,7 @@ class TestGame < MiniTest::Test
       "title" => "Horizon Zero Dawn",
       "description" => "Centuries after the world has fallen to animalistic machines, a young hunter named Aloy must travel the primitive land to learn the truth about her mysterious past and how this world came to be.",
       "genre" => "Action RPG",
-      "stock_quantity" => 20,
+      "stock_quantity" => 5,
       "buying_cost" => 25,
       "selling_price" => 45
     })
@@ -29,7 +29,7 @@ class TestGame < MiniTest::Test
   end
 
   def test_game_has_stock_quantity()
-    assert_equal(20, @game1.stock_quantity())
+    assert_equal(5, @game1.stock_quantity())
   end
 
   def test_game_has_buying_cost()

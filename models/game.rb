@@ -1,7 +1,5 @@
 require_relative("../db/sql_runner.rb")
 
-# Refactor all .map into one 'map' function - see hw solutions
-
 class Game
 
   attr_reader :id
@@ -18,7 +16,8 @@ class Game
     @publisher_id = options["publisher_id"].to_i()
   end
 
-
+# -----------------------------------------------------------------------------
+# CREATE
   def save()
     sql = "INSERT INTO games (
       title,
@@ -36,7 +35,8 @@ class Game
     @id = results[0]["id"].to_i()
   end
 
-
+# -----------------------------------------------------------------------------
+#DELETE
   def self.delete_all()
     sql = "DELETE FROM games;"
     SqlRunner.run(sql)
@@ -48,7 +48,8 @@ class Game
     SqlRunner.run(sql, [@id])
   end
 
-
+# -----------------------------------------------------------------------------
+# READ
   def self.all()
     sql = "SELECT * FROM games ORDER BY title ASC;"
     results = SqlRunner.run(sql)
@@ -62,7 +63,8 @@ class Game
     return Game.new(result[0])
   end
 
-
+# -----------------------------------------------------------------------------
+# UPDATE
   def update()
     sql = "UPDATE games SET
       title = $1,
@@ -78,30 +80,26 @@ class Game
     SqlRunner.run(sql, values)
   end
 
-
+# -----------------------------------------------------------------------------
   def publisher()
     return Publisher.find(@publisher_id)
-    # sql = "SELECT * FROM publishers
-    #   WHERE publishers.id = $1;"
-    # result = SqlRunner.run(sql, [@id])
-    # return result.map {|publisher| Publisher.new(publisher)}
   end
 
   def markup()
-    profit = @selling_price - @buying_cost
-    result = profit.to_f() / @buying_cost
-    markup = result * 100
-    return markup.to_i()
+    # Get the profit (price-cost), turn to float, divide by cost
+    result = (@selling_price - @buying_cost).to_f() / @buying_cost
+    # Return float(e.g. 0.8) x 100, then turn back to integer
+    return (result * 100).to_i()
   end
 
-
   def platform()
+    # Get platform data, link with joiner table, then link to games table
     sql = "SELECT platforms.* FROM platforms
       INNER JOIN game_platforms
       ON game_platforms.platform_id = platforms.id
       WHERE game_platforms.game_id = $1;"
-    result = SqlRunner.run(sql, [@id])
-    return result.map{|platform| Platform.new(platform)}
+    results = SqlRunner.run(sql, [@id])
+    return results.map{|platform| Platform.new(platform)}
   end
 
 end
