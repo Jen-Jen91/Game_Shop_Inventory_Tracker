@@ -17,5 +17,5 @@ button a {
 }
 
 .button:hover, button:hover {
-  background-color: DarkGrey;
+  background-color: #606060;
 }

@@ -1,5 +1,4 @@
 /* Nav Bar------------------------------------*/
-
 nav ul {
   list-style-type: none;
   text-transform: uppercase;
@@ -39,6 +38,11 @@ html {
   font-size: 3em;
 }
 
+.home a {
+  text-decoration: underline;
+  color: inherit;
+}
+
 .index, .show {
   margin-bottom: 100px;
 }
@@ -70,9 +74,4 @@ td.out-of-stock {
   display: inline-block;
   border-radius: 15px;
   padding: 2px 0px 2px 0px;
-}
-
-.home a {
-  text-decoration: underline;
-  color: inherit;
 }
