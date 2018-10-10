@@ -40,3 +40,12 @@ textarea {
   width: 345px;
   margin-bottom: 15px;
 }
+
+.checkbox {
+  margin: 10px 0px 0px 5px;
+  font-style: italic;
+}
+
+label {
+  font-weight: bold;
+}

@@ -16,14 +16,6 @@
   <input type="text" name="genre" id="genre-field" required>
   <br>
   <br>
-  <label for="platform_select">Select Platforms(s):</label>
-    <select name="platform_id" id="platform_select">
-      <% @platforms.each do |platform| %>
-        <option value="<%= platform.id %>"><%= platform.name %></option>
-      <% end %>
-    </select>
-  <br>
-  <br>
   <label for="stock-field">Stock:</label>
   <input type="number" name="stock_quantity" id="stock-field" min="1" required>
   <br>
@@ -37,16 +29,22 @@
   <br>
   <br>
   <label for="publisher_select">Select Publisher:</label>
-    <select name="publisher_id" id="publisher_select">
-      <% @publishers.each do |publisher| %>
-        <option value="<%= publisher.id %>"><%= publisher.name %></option>
-      <% end %>
-    </select>
+  <select name="publisher_id" id="publisher_select">
+    <% @publishers.each do |publisher| %>
+    <option value="<%= publisher.id %>"><%= publisher.name %></option>
+    <% end %>
+  </select>
   <br>
   <br>
-  <% @platforms.each do |platform| %>
-    <input type='checkbox' name='platform_ids[]' value='<%= platform.id %>' /><%= platform.name %><br>
-  <% end %>
+  <label for="platform_select">Select Platforms(s):</label><br>
+  <div class="checkbox">
+
+    <% @platforms.each do |platform| %>
+    <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>" /  ><%= platform.name %><br>
+    <% end %>
+
+  </div>
+  <br>
 
   <input type="submit" value="Add Game" class="button">
 

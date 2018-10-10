@@ -40,3 +40,19 @@ td a:hover {
   border: 2px solid grey;
   border-radius: 15px;
 }
+
+.index-platform {
+  width: 150px;
+  background-color: white;
+  padding: 10px 10px 15px 10px;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+
+.index-game {
+  width: 1220px;
+  background-color: white;
+  padding: 10px 10px 30px 10px;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
