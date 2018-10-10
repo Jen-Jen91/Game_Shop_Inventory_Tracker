@@ -8,21 +8,18 @@
 
   <br><br>
 
-  <section class="index-platform">
+  <table>
+    <tr>
+      <th>Platform</th>
+    </tr>
 
-    <table>
+    <% for platform in @platforms %>
       <tr>
-        <th>Platform</th>
+        <td>
+          <a href="/platforms/<%= platform.id %>"><%= platform.name %></a>
+        </td>
       </tr>
+    <% end %>
+  </table>
 
-      <% for platform in @platforms %>
-        <tr>
-          <td>
-            <a href="/platforms/<%= platform.id %>"><%= platform.name %></a>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-
-  </section>
 </section>

@@ -8,25 +8,22 @@
 
   <br><br>
 
-  <section class="index-publisher">
+  <table>
+    <tr>
+      <th>Publisher Name</th>
+      <th>Contact Name</th>
+      <th>Contact Email</th>
+    </tr>
 
-    <table>
+    <% for publisher in @publishers %>
       <tr>
-        <th>Publisher Name</th>
-        <th>Contact Name</th>
-        <th>Contact Email</th>
+        <td>
+          <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a>
+        </td>
+        <td><%= publisher.contact_name %></td>
+        <td><%= publisher.contact_email %></td>
       </tr>
+    <% end %>
+  </table>
 
-      <% for publisher in @publishers %>
-        <tr>
-          <td>
-            <a href="/publishers/<%= publisher.id %>"><%= publisher.name %></a>
-          </td>
-          <td><%= publisher.contact_name %></td>
-          <td><%= publisher.contact_email %></td>
-        </tr>
-      <% end %>
-    </table>
-
-  </section>
 </section>

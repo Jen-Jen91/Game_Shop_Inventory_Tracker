@@ -1,63 +1,40 @@
-
-td {
-  padding: 10px 25px 0px 5px;
-  border-bottom: 1px solid black;
-  text-align: center;
-}
-
-th {
-  text-align: center;
-  padding: 10px 25px 10px 5px;
-  border-bottom: 5px solid black;
-}
+/* Table and Headers----------------------------------------------------------*/
 
 table {
+  border: 2px solid grey;
   border-collapse: collapse;
   background-color: white;
 }
 
+th {
+  text-align: center;
+  padding: 5px 25px 5px 0px;
+  border-bottom: 5px solid black;
+}
+
+tr {
+  padding: 5px;
+}
+
+/* Table Data-----------------------------------------------------------------*/
+
+td {
+  padding: 10px 25px 10px 10px;
+  border-bottom: 1px solid #F2F4F4;
+  text-align: left;
+}
+
 td a {
   text-decoration: none;
+  color: inherit;
 }
 
 td a:hover {
-  background-color: DarkGrey;
-  padding: 0px 5px;
-}
-
-.table-show {
-  width: 340px;
-  background-color: white;
-  padding: 5px 5px 40px 5px;
-  border: 2px solid grey;
-  border-radius: 15px;
-}
-
-.index-publisher {
-  width: 500px;
-  background-color: white;
-  padding: 10px 10px 15px 10px;
-  border: 2px solid grey;
-  border-radius: 15px;
-}
-
-.index-platform {
-  width: 150px;
-  background-color: white;
-  padding: 10px 10px 15px 10px;
-  border: 2px solid grey;
-  border-radius: 15px;
-}
-
-.index-game {
-  width: 1220px;
-  background-color: white;
-  padding: 10px 10px 30px 10px;
-  border: 2px solid grey;
-  border-radius: 15px;
+  background-color: #16C89F;
 }
 
 /* Stock alerts---------------------------------------------------------------*/
+
 tr.low-stock {
   background-color: #EFA94F;
   text-align: center;

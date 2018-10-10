@@ -2,34 +2,31 @@
 
   <h1><%= @publisher.name %></h1>
 
-  <section class="table-show">
+  <table>
+    <tr>
+      <td>Games:</td>
+      <td>
+        <% for game in @publisher.games %>
+          <%= game.title %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><%= @publisher.contact_name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @publisher.contact_email %></td>
+    </tr>
+  </table>
 
-    <table>
-      <tr>
-        <td>Games:</td>
-        <td>
-          <% for game in @publisher.games %>
-            <%= game.title %>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <td>Name:</td>
-        <td><%= @publisher.contact_name %></td>
-      </tr>
-      <tr>
-        <td>Email:</td>
-        <td><%= @publisher.contact_email %></td>
-      </tr>
-    </table>
+  <br>
 
-    <br>
+  <button type="button">
+    <a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a>
+  </button>
 
-    <button type="button">
-      <a href="/publishers/<%= @publisher.id %>/edit">Edit Publisher</a>
-    </button>
+  <form action="/publishers/<%= @publisher.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 
-    <form action="/publishers/<%= @publisher.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
-
-  </section>
 </section>

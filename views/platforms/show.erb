@@ -2,27 +2,24 @@
 
   <h1><%= @platform.name %></h1>
 
-  <section class="table-show">
+  <table>
+    <tr>
+      <td>Games:</td>
+      <td>
+        <% for game in @platform.game %>
+          <%= game.title%>
+        <% end %>
+      </td>
+    </tr>
 
-    <table>
-      <tr>
-        <td>Games:</td>
-        <td>
-          <% for game in @platform.game %>
-            <%= game.title%>
-          <% end %>
-        </td>
-      </tr>
+  </table>
 
-    </table>
+  <br>
 
-    <br>
+  <button type="button">
+    <a href="/platforms/<%= @platform.id %>/edit">Edit Platform</a>
+  </button>
 
-    <button type="button">
-      <a href="/platforms/<%= @platform.id %>/edit">Edit Platform</a>
-    </button>
+  <form action="/platforms/<%= @platform.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
 
-    <form action="/platforms/<%= @platform.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
-
-  </section>
 </section>
