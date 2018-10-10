@@ -25,28 +25,21 @@ nav ul {
 }
 
 /* Body and Headings------------------------------------*/
-body {
-  font-family: 'K2D', sans-serif;
+html {
   background: black url("/images/super_mario.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: 'K2D', sans-serif;
+}
+
+body {
+  height: 100%;
 }
 
 .home {
   text-align: center;
   margin-bottom: 340px;
-}
-
-body.home {
-  background-color: yellow;
-}
-
-footer {
-  padding-top: 10px;
-  position: relative;
-  bottom: 0;
-  color: white;
 }
 
 .index, .show {
