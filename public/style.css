@@ -1,4 +1,4 @@
-/* Nav Bar------------------------------------*/
+/* Nav Bar--------------------------------------------------------------------*/
 nav ul {
   list-style-type: none;
   text-transform: uppercase;
@@ -20,7 +20,7 @@ nav ul {
   padding: 3px 10px;
 }
 
-/* Body and Headings------------------------------------*/
+/* Body and Headings----------------------------------------------------------*/
 html {
   background: black url("/images/super_mario.jpg");
   background-size: cover;
@@ -47,20 +47,10 @@ html {
   margin-bottom: 100px;
 }
 
-/* Stock alerts------------------------------------*/
-td.low-stock {
-  background-color: yellow;
-  text-align: center;
-}
-
-td.out-of-stock {
-  background-color: red;
-  text-align: center;
-}
-
+/* Stock alerts---------------------------------------------------------------*/
 .home .low-stock {
   color: white;
-  background-color: orange;
+  background-color: #EFA94F;
   width: 500px;
   display: inline-block;
   border-radius: 15px;
@@ -69,7 +59,7 @@ td.out-of-stock {
 
 .home .out-of-stock {
   color: white;
-  background-color: red;
+  background-color: #B90B0B;
   width: 500px;
   display: inline-block;
   border-radius: 15px;

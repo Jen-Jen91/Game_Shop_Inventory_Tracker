@@ -24,31 +24,31 @@
       </tr>
 
       <% for game in @games %>
-        <tr>
-          <td><a href="/games/<%= game.id %>"><%= game.title %></a></td>
-          <td><%= game.description %></td>
-          <td><%= game.genre %></td>
-          <td>
-            <% for platform in game.platform %>
-              <%= platform.name %>
-            <% end %>
-          </td>
 
-          <% if game.stock_quantity == 0 %></p>
-            <td class="out-of-stock"><%= game.stock_quantity %></td>
-          <% elsif game.stock_quantity <= 5%>
-            <td class="low-stock"><%= game.stock_quantity %></td>
-          <% else %>
+        <% if game.stock_quantity == 0 %></p>
+          <tr class="out-of-stock">
+        <% elsif game.stock_quantity <= 5%>
+          <tr class="low-stock">
+        <% else %>
+          <tr>
+        <% end %>
+
+            <td><a href="/games/<%= game.id %>"><%= game.title %></a></td>
+            <td><%= game.description %></td>
+            <td><%= game.genre %></td>
+            <td>
+              <% for platform in game.platform %>
+                <%= platform.name %>
+              <% end %>
+            </td>
             <td><%= game.stock_quantity %></td>
-          <% end %>
-
-          <td>£<%= game.buying_cost %></td>
-          <td>£<%= game.selling_price %></td>
-          <td><%= game.markup %> %</td>
-          <td>
-            <a href="/publishers/<%= game.publisher.id %>"><%= game.publisher.name %></a>
-          </td>
-        </tr>
+            <td>£<%= game.buying_cost %></td>
+            <td>£<%= game.selling_price %></td>
+            <td><%= game.markup %> %</td>
+            <td>
+              <a href="/publishers/<%= game.publisher.id %>"><%= game.publisher.name %></a>
+            </td>
+          </tr>
 
       <% end %>
 

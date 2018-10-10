@@ -56,3 +56,15 @@ td a:hover {
   border: 2px solid grey;
   border-radius: 15px;
 }
+
+/* Stock alerts---------------------------------------------------------------*/
+tr.low-stock {
+  background-color: #EFA94F;
+  text-align: center;
+}
+
+tr.out-of-stock {
+  background-color: #B90B0B;
+  text-align: center;
+  color: white;
+}
