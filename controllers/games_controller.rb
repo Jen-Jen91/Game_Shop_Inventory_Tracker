@@ -61,7 +61,7 @@ post("/games/:id") do
   game.update()
   for platform_id in params["platform_ids"]
     game_platform = GamePlatform.new({
-      "game_id" => game.id,
+    
       "platform_id" => platform_id
     })
     game_platform.update()

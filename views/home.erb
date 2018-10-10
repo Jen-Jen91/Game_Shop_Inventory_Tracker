@@ -4,9 +4,9 @@
 
   <% for game in @games %>
     <% if game.stock_quantity == 0 %>
-      <h3 class="out-of-stock">You are out of stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a> </h3>
+      <h3 class="out-of-stock">You are out of stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a> </h3><br>
     <% elsif game.stock_quantity<=5 %>
-      <h3 class="low-stock">You are running low on stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a></h3>
+      <h3 class="low-stock">You are running low on stock on <a href="/games/<%= game.id %>"><%= game.title %>!</a></h3><br>
     <% end %>
   <% end %>
 

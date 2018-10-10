@@ -1,7 +1,4 @@
 /* Nav Bar------------------------------------*/
-nav {
-
-}
 
 nav ul {
   list-style-type: none;
@@ -33,13 +30,13 @@ html {
   font-family: 'K2D', sans-serif;
 }
 
-body {
-  height: 100%;
-}
-
 .home {
   text-align: center;
   margin-bottom: 340px;
+}
+
+.home h1 {
+  font-size: 3em;
 }
 
 .index, .show {
@@ -58,11 +55,21 @@ td.out-of-stock {
 }
 
 .home .low-stock {
-  color: orange;
+  color: white;
+  background-color: orange;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 2px 0px 2px 0px;
 }
 
 .home .out-of-stock {
-  color: red;
+  color: white;
+  background-color: red;
+  width: 500px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 2px 0px 2px 0px;
 }
 
 .home a {
