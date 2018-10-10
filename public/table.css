@@ -14,7 +14,6 @@ th {
 table {
   border-collapse: collapse;
   background-color: white;
-
 }
 
 td a {
@@ -24,4 +23,20 @@ td a {
 td a:hover {
   background-color: DarkGrey;
   padding: 0px 5px;
+}
+
+.table-show {
+  width: 340px;
+  background-color: white;
+  padding: 5px 5px 40px 5px;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+
+.index-publisher {
+  width: 500px;
+  background-color: white;
+  padding: 10px 10px 15px 10px;
+  border: 2px solid grey;
+  border-radius: 15px;
 }

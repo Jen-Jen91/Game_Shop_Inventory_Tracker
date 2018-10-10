@@ -1,14 +1,16 @@
-form.publisher, .platform {
+.publisher, .platform {
   width: 325px;
   background-color: white;
   padding: 10px 10px 40px 10px;
+  border: 2px solid grey;
   border-radius: 15px;
 }
 
-form.game, .edit, {
+.edit, .game {
   width: 350px;
   background-color: white;
   padding: 10px 10px 40px 10px;
+  border: 2px solid grey;
   border-radius: 15px;
 }
 

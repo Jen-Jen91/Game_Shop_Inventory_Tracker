@@ -16,9 +16,10 @@ nav ul {
 
 .nav-item a {
   text-decoration: none;
-  color: white;
-  background-color: grey;
-  border: none;
+  font-weight: bold;
+  color: black;
+  background-color: AliceBlue;
+  border: 1px solid black;
   border-radius: 25px;
   padding: 3px 10px;
 }
@@ -45,6 +46,7 @@ footer {
   padding-top: 10px;
   position: relative;
   bottom: 0;
+  color: white;
 }
 
 .index, .show {

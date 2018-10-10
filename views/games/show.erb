@@ -4,7 +4,9 @@
 
   <h3><%= @game.description %></h3>
 
-  <table class="table-show">
+  <section class="table-show">
+
+  <table>
     <tr>
       <td>Stock:</td>
       <td><%= @game.stock_quantity %></td>
@@ -44,5 +46,8 @@
   </button>
 
   <form action="/games/<%= @game.id %>/delete" method="POST"><input type="submit" value="Delete" class="button"></form>
+
+
+</section>
 
 </section>
