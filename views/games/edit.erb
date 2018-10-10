@@ -1,56 +1,60 @@
-<h1>Edit Game</h1>
+<section class="edit">
 
-<form action="/games/<%= @game.id %>" method="post" class="game">
+  <h1>Edit Game</h1>
 
-  <label for="title-field">Title:</label>
-  <input type="text" name="title" id="title-field" value="<%= @game.title %>">
+  <form action="/games/<%= @game.id %>" method="post" class="game">
 
-  <br><br>
+    <label for="title-field">Title:</label>
+    <input type="text" name="title" id="title-field" value="<%= @game.title %>">
 
-  <textarea name="description" rows="4" cols="50"><%= @game.description %></textarea>
+    <br><br>
 
-  <br><br>
+    <textarea name="description" rows="4" cols="50"><%= @game.description %></textarea>
 
-  <label for="genre-field">Genre:</label>
-  <input type="text" name="genre" id="genre-field" value="<%= @game.genre %>">
+    <br><br>
 
-  <br><br>
+    <label for="genre-field">Genre:</label>
+    <input type="text" name="genre" id="genre-field" value="<%= @game.genre %>">
 
-  <label for="stock-field">Stock:</label>
-  <input type="number" name="stock_quantity" id="stock-field" min="0" value="<%= @game.stock_quantity %>">
+    <br><br>
 
-  <br><br>
+    <label for="stock-field">Stock:</label>
+    <input type="number" name="stock_quantity" id="stock-field" min="0" value="<%= @game.stock_quantity %>">
 
-  <label for="cost-field">Cost: £</label>
-  <input type="number" name="buying_cost" id="cost-field" min="1" value="<%= @game.buying_cost %>">
+    <br><br>
 
-  <br><br>
+    <label for="cost-field">Cost: £</label>
+    <input type="number" name="buying_cost" id="cost-field" min="1" value="<%= @game.buying_cost %>">
 
-  <label for="price-field">Price: £</label>
-  <input type="number" name="selling_price" id="price-field" min="1" value="<%= @game.selling_price %>">
+    <br><br>
 
-  <br><br>
+    <label for="price-field">Price: £</label>
+    <input type="number" name="selling_price" id="price-field" min="1" value="<%= @game.selling_price %>">
 
-  <label for="publisher_select">Select Publisher:</label>
+    <br><br>
+
+    <label for="publisher_select">Select Publisher:</label>
     <select name="publisher_id" id="publisher_select">
       <% @publishers.each do |publisher| %>
         <option value="<%= publisher.id %>" <%= "selected" if @game.publisher_id == publisher.id %>> <%= publisher.name %></option>
       <% end %>
     </select>
 
-  <br><br>
+    <br><br>
 
-  <label for="platform_select">Select Platforms(s):</label><br>
-  <div class="checkbox">
+    <label for="platform_select">Select Platforms(s):</label><br>
+    <div class="checkbox">
 
-    <% @platforms.each do |platform| %>
-      <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>"><%= platform.name %><br>
-    <% end %>
+      <% @platforms.each do |platform| %>
+        <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>"><%= platform.name %><br>
+      <% end %>
 
-  </div>
+    </div>
 
-  <br><br>
+    <br><br>
 
-  <input type="submit" value="Submit Changes" class="button">
+    <input type="submit" value="Submit Changes" class="button">
 
-</form>
+  </form>
+
+</section>

@@ -1,12 +1,16 @@
-<h1>Edit Platform</h1>
+<section class="edit">
 
-<form action="/platforms/<%= @platform.id %>" method="post" class="platform">
+  <h1>Edit Platform</h1>
 
-  <label for="name-field">Platform Name:</label>
-  <input type="text" name="name" id="name-field" value="<%= @platform.name %>">
+  <form action="/platforms/<%= @platform.id %>" method="post" class="platform">
 
-  <br><br>
+    <label for="name-field">Platform Name:</label>
+    <input type="text" name="name" id="name-field" value="<%= @platform.name %>">
 
-  <input type="submit" value="Submit Changes" class="button">
+    <br><br>
 
-</form>
+    <input type="submit" value="Submit Changes" class="button">
+
+  </form>
+
+</section>

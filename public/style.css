@@ -43,7 +43,7 @@ html {
   color: inherit;
 }
 
-.index, .show {
+.index, .show, .edit, .new {
   margin-bottom: 100px;
 }
 

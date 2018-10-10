@@ -1,22 +1,26 @@
-<h1>Edit Publisher</h1>
+<section class="edit">
 
-<form action="/publishers/<%= @publisher.id %>" method="post" class="publisher">
+  <h1>Edit Publisher</h1>
 
-  <label for="name-field">Name:</label>
-  <input type="text" name="name" id="name-field" value="<%= @publisher.name %>">
+  <form action="/publishers/<%= @publisher.id %>" method="post" class="publisher">
 
-  <br><br>
+    <label for="name-field">Name:</label>
+    <input type="text" name="name" id="name-field" value="<%= @publisher.name %>">
 
-  <label for="contact-name-field">Contact Name:</label>
-  <input type="text" name="contact_name" id="contact-name-field" value="<%= @publisher.contact_name %>">
+    <br><br>
 
-  <br><br>
+    <label for="contact-name-field">Contact Name:</label>
+    <input type="text" name="contact_name" id="contact-name-field" value="<%= @publisher.contact_name %>">
 
-  <label for="contact-email-field">Contact Email:</label>
-  <input type="text" name="contact_email" id="contact-email-field" value="<%= @publisher.contact_email %>">
+    <br><br>
 
-  <br><br>
+    <label for="contact-email-field">Contact Email:</label>
+    <input type="text" name="contact_email" id="contact-email-field" value="<%= @publisher.contact_email %>">
+    
+    <br><br>
 
-  <input type="submit" value="Submit Changes" class="button">
+    <input type="submit" value="Submit Changes" class="button">
 
-</form>
+  </form>
+
+</section>
