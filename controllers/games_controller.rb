@@ -1,6 +1,5 @@
 require("sinatra")
 require("sinatra/contrib/all")
-require('pry')
 require_relative("../models/game.rb")
 require_relative("../models/game_platform.rb")
 require_relative("../models/publisher.rb")
@@ -23,21 +22,24 @@ get("/games/new") do
 end
 
 
-# Params = all input data in form (keys are 'name')
-# In CREATE, save Game object first, then save GamePlatform object
-# Instead of using the whole params hash, access only the pairs 'game_id' and 'platform_ids' - latter is an array (indicated by name='platform_ids[]' in new.erb) - use 'for loop' to access each element, then use this as the value for 'platform_id' key - 'game_id' has already been saved so can access this each time we loop for each element/id in array
-# Checkbox will update with each new object in platforms table
-
+# CREATE - save Game object first (so can access game.id), then save GamePlatform object
+# Use each element in "platform_ids" array (from input) as platform_id
+# Loops over each element in array, so saved game is given multiple platforms through join table
 
 # CREATE
 post("/games") do
   game = Game.new(params)
   game.save()
   for platform_id in params["platform_ids"]
-    game_platform = GamePlatform.new({"game_id" => game.id, "platform_id" => platform_id}).save()
+    game_platform = GamePlatform.new({
+      "game_id" => game.id,
+      "platform_id" => platform_id
+    })
+    game_platform.save()
   end
   redirect to("/games")
 end
+
 
 # SHOW
 get("/games/:id") do
