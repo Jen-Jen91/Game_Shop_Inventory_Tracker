@@ -1,3 +1,4 @@
+/* Form-----------------------------------------------------------------------*/
 .publisher, .platform {
   width: 325px;
   background-color: white;
@@ -6,7 +7,7 @@
   border-radius: 15px;
 }
 
-.edit, .game {
+.game {
   width: 350px;
   background-color: white;
   padding: 10px 10px 40px 10px;
@@ -14,6 +15,7 @@
   border-radius: 15px;
 }
 
+/* Input----------------------------------------------------------------------*/
 select {
  width: 204px;
  font-size: 0.9em;
@@ -22,7 +24,6 @@ select {
  display: inline-block;
  float: right;
 }
-
 
 input {
   width: 200px;
