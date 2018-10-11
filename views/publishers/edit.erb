@@ -1,6 +1,6 @@
 <section class="edit">
 
-  <h1>Edit Publisher</h1>
+  <h1>Edit Publisher Details</h1>
 
   <form action="/publishers/<%= @publisher.id %>" method="post" class="publisher">
 
@@ -16,7 +16,7 @@
 
     <label for="contact-email-field">Contact Email:</label>
     <input type="text" name="contact_email" id="contact-email-field" value="<%= @publisher.contact_email %>">
-    
+
     <br><br>
 
     <input type="submit" value="Submit Changes" class="button">
