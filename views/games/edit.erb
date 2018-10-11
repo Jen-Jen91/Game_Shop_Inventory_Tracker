@@ -46,7 +46,13 @@
     <div class="checkbox">
 
       <% @platforms.each do |platform| %>
-        <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>"><%= platform.name %><br>
+        <input type="checkbox" name="platform_ids[]" id="platform_select" value="<%= platform.id %>"
+          <% for p in @game.platform %>
+            <% if p.name == platform.name %>
+              checked
+            <% end %>
+          <% end %>>
+        <%= platform.name %><br>
       <% end %>
 
     </div>

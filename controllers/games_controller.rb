@@ -61,10 +61,12 @@ post("/games/:id") do
   game.update()
   for platform_id in params["platform_ids"]
     game_platform = GamePlatform.new({
-    
+      "game_id" => game.id,
       "platform_id" => platform_id
     })
-    game_platform.update()
+    if GamePlatform.game_platform_exists?(game.id, platform_id) == false
+      game_platform.save()
+    end
   end
   redirect to("/games/#{params[:id]}")
 end

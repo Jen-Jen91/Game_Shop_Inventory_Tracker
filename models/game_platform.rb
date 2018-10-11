@@ -35,6 +35,11 @@ class GamePlatform
     SqlRunner.run(sql, [@id])
   end
 
+  def self.delete(platform_id)
+    sql = "DELETE FROM game_platforms WHERE platform_id = $1;"
+    result = SqlRunner.run(sql, [platform_id])
+  end
+
 # -----------------------------------------------------------------------------
 # READ
   def self.all()
@@ -74,5 +79,25 @@ class GamePlatform
     result = SqlRunner.run(sql, [@platform_id])
     return result.map{|platform| Platform.new(platform)}
   end
+
+
+  def self.game_platform_exists?(game_id, platform_id)
+    sql = "SELECT * FROM game_platforms
+      WHERE game_id = $1 AND platform_id = $2;
+    "
+    values = [game_id, platform_id]
+    array = SqlRunner.run(sql, values)
+    result = array.map {|g_p| GamePlatform.new(g_p)}
+    if result.length() == 0
+      return false
+    else
+      return true
+    end
+  end
+
+
+
+
+
 
 end
