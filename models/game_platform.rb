@@ -30,6 +30,12 @@ class GamePlatform
     SqlRunner.run(sql)
   end
 
+  def self.delete_all_using_game(game_id)
+    sql = "DELETE FROM game_platforms WHERE game_id = $1;"
+    result = SqlRunner.run(sql, [game_id])
+  end
+
+
   def delete()
     sql = "DELETE FROM game_platforms WHERE id = $1;"
     SqlRunner.run(sql, [@id])
@@ -81,17 +87,24 @@ class GamePlatform
   end
 
 
-  def self.exists?(game_id, platform_id)
-    sql = "SELECT * FROM game_platforms
-      WHERE game_id = $1 AND platform_id = $2;
-    "
-    values = [game_id, platform_id]
-    array = SqlRunner.run(sql, values)
-    result = array.map {|g_p| GamePlatform.new(g_p)}
-    if result.length() == 0
-      return false
-    else
-      return true
+  # def self.exists?(game_id, platform_id)
+  #   sql = "SELECT * FROM game_platforms
+  #     WHERE game_id = $1 AND platform_id = $2;
+  #   "
+  #   values = [game_id, platform_id]
+  #   array = SqlRunner.run(sql, values)
+  #   result = array.map {|g_p| GamePlatform.new(g_p)}
+  #   return !(result.length() == 0)
+  # end
+
+
+  def self.create_from_array(game_id, platform_ids)
+    for platform_id in platform_ids
+      game_platform = GamePlatform.new({
+        "game_id" => game_id,
+        "platform_id" => platform_id
+      })
+      game_platform.save()
     end
   end
 

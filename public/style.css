@@ -47,25 +47,27 @@ h1 {
   color: inherit;
 }
 
-.index, .show, .edit, .new {
-  margin-bottom: 100px;
+.index, .game-show, .game-edit, .game-new {
+  margin-bottom: 80px;
+}
+
+.edit, .new, .show {
+  margin-bottom: 300px;
 }
 
 /* Stock alerts---------------------------------------------------------------*/
 .home .low-stock {
   color: white;
   background-color: #EFA94F;
-  width: 500px;
   display: inline-block;
   border-radius: 15px;
-  padding: 2px 0px 2px 0px;
+  padding: 2px 15px 5px 15px;
 }
 
 .home .out-of-stock {
   color: white;
   background-color: #B90B0B;
-  width: 500px;
   display: inline-block;
   border-radius: 15px;
-  padding: 2px 0px 2px 0px;
+  padding: 2px 15px 5px 15px;
 }

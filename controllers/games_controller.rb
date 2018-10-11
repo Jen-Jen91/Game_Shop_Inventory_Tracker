@@ -22,21 +22,14 @@ get("/games/new") do
 end
 
 
-# CREATE - save Game object first (so can access game.id), then save GamePlatform object
-# Use each element in "platform_ids" array (from input) as platform_id
-# Loops over each element in array, so saved game is given multiple platforms through join table
+# CREATE - save Game object first (so can access game.id)
+# Use method to loop over "platform_ids" array (from input) and saves new GamePlatform object (arguments = game.id and element in array)
 
 # CREATE
 post("/games") do
   game = Game.new(params)
   game.save()
-  for platform_id in params["platform_ids"]
-    game_platform = GamePlatform.new({
-      "game_id" => game.id,
-      "platform_id" => platform_id
-    })
-    game_platform.save()
-  end
+  GamePlatform.create_from_array(game.id, params["platform_ids"])
   redirect to("/games")
 end
 
@@ -56,26 +49,16 @@ get("/games/:id/edit") do
 end
 
 
-# UPDATE - save Game object first (so can access game.id)
-# Loops over "platform_ids" array to get platform_id
-# Use method to see if GamePlatform already exists, and saves if not
+# UPDATE - update Game object first (so can access game.id)
+# Use method to delete all current instances in game_platforms db (avoids duplicates)
+# Use method to loop over "platform_ids" array (from input) and saves new GamePlatform object (arguments = game.id and element in array)
 
 # UPDATE
 post("/games/:id") do
   game = Game.new(params)
   game.update()
-
-  for platform_id in params["platform_ids"]
-    game_platform = GamePlatform.new({
-      "game_id" => game.id,
-      "platform_id" => platform_id
-    })
-
-    if GamePlatform.exists?(game.id, platform_id) == false
-      game_platform.save()
-    end
-
-  end
+  GamePlatform.delete_all_using_game(game.id)
+  GamePlatform.create_from_array(game.id, params["platform_ids"])
   redirect to("/games/#{params[:id]}")
 end
 
