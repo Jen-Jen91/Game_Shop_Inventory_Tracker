@@ -4,7 +4,7 @@
 
   <h4><em><%= @game.description %></em></h4>
 
-  <table class="show">
+  <table>
     <tr>
       <td><strong>Stock:</strong></td>
       <td><%= @game.stock_quantity %></td>
@@ -17,7 +17,7 @@
       <td><strong>Platform(s):</strong></td>
       <td>
         <% for platform in @game.platform %>
-          <%= platform.name %>
+          <p><%= platform.name %></p>
         <% end %>
       </td>
     </tr>
