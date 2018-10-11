@@ -23,6 +23,18 @@ class GamePlatform
     @id = results[0]["id"].to_i()
   end
 
+# For every element in "platform_ids" array (will be from input), use this as the platform_id for new object
+
+  def self.create_from_array(game_id, platform_ids)
+    for platform_id in platform_ids
+      game_platform = GamePlatform.new({
+        "game_id" => game_id,
+        "platform_id" => platform_id
+      })
+      game_platform.save()
+    end
+  end
+
 # -----------------------------------------------------------------------------
 # DELETE
   def self.delete_all()
@@ -35,15 +47,9 @@ class GamePlatform
     result = SqlRunner.run(sql, [game_id])
   end
 
-
   def delete()
     sql = "DELETE FROM game_platforms WHERE id = $1;"
     SqlRunner.run(sql, [@id])
-  end
-
-  def self.delete(platform_id)
-    sql = "DELETE FROM game_platforms WHERE platform_id = $1;"
-    result = SqlRunner.run(sql, [platform_id])
   end
 
 # -----------------------------------------------------------------------------
@@ -96,17 +102,5 @@ class GamePlatform
   #   result = array.map {|g_p| GamePlatform.new(g_p)}
   #   return !(result.length() == 0)
   # end
-
-
-  def self.create_from_array(game_id, platform_ids)
-    for platform_id in platform_ids
-      game_platform = GamePlatform.new({
-        "game_id" => game_id,
-        "platform_id" => platform_id
-      })
-      game_platform.save()
-    end
-  end
-
 
 end
