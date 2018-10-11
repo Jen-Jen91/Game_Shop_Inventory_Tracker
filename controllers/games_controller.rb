@@ -55,18 +55,26 @@ get("/games/:id/edit") do
   erb(:"games/edit")
 end
 
+
+# UPDATE - save Game object first (so can access game.id)
+# Loops over "platform_ids" array to get platform_id
+# Use method to see if GamePlatform already exists, and saves if not
+
 # UPDATE
 post("/games/:id") do
   game = Game.new(params)
   game.update()
+
   for platform_id in params["platform_ids"]
     game_platform = GamePlatform.new({
       "game_id" => game.id,
       "platform_id" => platform_id
     })
-    if GamePlatform.game_platform_exists?(game.id, platform_id) == false
+
+    if GamePlatform.exists?(game.id, platform_id) == false
       game_platform.save()
     end
+
   end
   redirect to("/games/#{params[:id]}")
 end

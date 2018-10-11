@@ -81,7 +81,7 @@ class GamePlatform
   end
 
 
-  def self.game_platform_exists?(game_id, platform_id)
+  def self.exists?(game_id, platform_id)
     sql = "SELECT * FROM game_platforms
       WHERE game_id = $1 AND platform_id = $2;
     "
@@ -94,10 +94,6 @@ class GamePlatform
       return true
     end
   end
-
-
-
-
 
 
 end
