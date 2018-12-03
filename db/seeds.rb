@@ -1,4 +1,3 @@
-require("pry")
 require_relative("../models/game_platform.rb")
 require_relative("../models/game.rb")
 require_relative("../models/platform.rb")
@@ -144,7 +143,3 @@ g_p6.save()
 g_p7.save()
 g_p8.save()
 g_p9.save()
-
-#------------------------------------------------------------------------------
-binding.pry
-nil
