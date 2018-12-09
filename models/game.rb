@@ -93,7 +93,6 @@ class Game
   end
 
   def platform()
-    # Get platform data, link with joiner table, then link to games table
     sql = "SELECT platforms.* FROM platforms
       INNER JOIN game_platforms
       ON game_platforms.platform_id = platforms.id

@@ -54,7 +54,6 @@ class Platform
 
 # -----------------------------------------------------------------------------
   def game()
-    # Get game data, link with joiner table, then link to platforms table
     sql = "SELECT games.* FROM games
       INNER JOIN game_platforms
       ON game_platforms.game_id = games.id
