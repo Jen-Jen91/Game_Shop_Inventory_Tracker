@@ -1,13 +1,14 @@
 # Video Game Shop
 
-For this solo project, I designed a web app for video game shop owners who wish to keep track of their stock. The main language used for the code was Ruby, as well as an SQL databases and HTML/CSS for the front-end design.
+For this solo project, I designed a web app for video game shop owners who wish to keep track of their stock and save/edit other useful information. The code was written in Ruby with a PostgreSQL database, as well as HTML and CSS for the front-end design.
 
 ### To run the app:
 
 * In the terminal, run the following commands to create the database and run the Ruby code:
-    1) *psql -d game_shop -f db/game_shop.sql*
-    2) *ruby db/seeds.rb*, then *exit* Pry
-    3) *ruby app.rb* (keep this running whilst using the app)
+    1) *createdb game_shop*
+    2) *psql -d game_shop -f db/game_shop.sql*
+    3) *ruby db/seeds.rb*
+    4) *ruby app.rb* (keep this running whilst using the app)
 * To view the app on the browser, head to http://localhost:4567/
 
 
